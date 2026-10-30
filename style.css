@@ -7,7 +7,17 @@
    The site accent is brass; the two app identities (Zylo cyan, YTM Relay
    orange) appear only where the app itself is shown, so they read as brands
    rather than as a second site accent.
-   Type: Space Grotesk (display), Plus Jakarta Sans (body), JetBrains Mono (data). */
+   Type: Space Grotesk (display), Plus Jakarta Sans (body), JetBrains Mono (data).
+
+   Fonts are self-hosted latin subsets, not the Google Fonts CDN: the CDN
+   stylesheet was render-blocking and added a second origin handshake before
+   any text could paint, which is most of the first paint cost on a page whose
+   above-fold content is text. */
+
+/* Berkas variabel latin dari Google Fonts, satu berkas per keluarga. */
+@font-face{font-family:"Space Grotesk";src:url("assets/fonts/SpaceGrotesk-var.woff2") format("woff2");font-weight:500 700;font-style:normal;font-display:swap}
+@font-face{font-family:"Plus Jakarta Sans";src:url("assets/fonts/PlusJakartaSans-var.woff2") format("woff2");font-weight:400 700;font-style:normal;font-display:swap}
+@font-face{font-family:"JetBrains Mono";src:url("assets/fonts/JetBrainsMono-var.woff2") format("woff2");font-weight:400 500;font-style:normal;font-display:swap}
 
 :root{
   --bg:#0D0B08;

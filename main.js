@@ -1,38 +1,39 @@
 /* altairk.my.id - shared behaviour
-   1. Download buttons pull the LATEST GitHub Release per app (graceful fallback).
-   2. Scroll-reveal via IntersectionObserver (never a scroll listener). */
+   Download buttons pull the LATEST GitHub Release per app, so the version and
+   the APK size on the page are never stale and never hand-typed. The answer is
+   kept in sessionStorage for six hours: a visitor moving between the three
+   pages costs one call per app per session instead of one per page. If the API
+   is unreachable the label falls back to pointing at GitHub, which stays true. */
 (function () {
   "use strict";
-
-  var reduce = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
 
   function fmtSize(b) { return (b / 1048576).toFixed(1).replace(".", ",") + " MB"; }
 
   var repos = ["ytm-relay", "cyclocomp"];
+  var SIX_HOURS = 6 * 60 * 60 * 1000;
+
   repos.forEach(function (repo) {
-    fetch("https://api.github.com/repos/AltairKaslana/" + repo + "/releases/latest", { cache: "no-store" })
+    function paint(j) {
+      var apk = (j.assets || []).filter(function (a) { return /\.apk$/i.test(a.name); })[0];
+      var url = apk ? apk.browser_download_url : j.html_url;
+      document.querySelectorAll('a[data-repo="' + repo + '"]').forEach(function (a) { a.href = url; });
+      var label = [j.tag_name, apk ? fmtSize(apk.size) : ""].filter(Boolean).join(" · ");
+      document.querySelectorAll('[data-ver="' + repo + '"]').forEach(function (s) { s.textContent = label; });
+    }
+    function miss() {
+      document.querySelectorAll('[data-ver="' + repo + '"]').forEach(function (s) { s.textContent = "Rilis terbaru ada di GitHub"; });
+    }
+
+    var hit = null;
+    try { hit = JSON.parse(sessionStorage.getItem("rel:" + repo) || "null"); } catch (e) {}
+    if (hit && hit.j && Date.now() - hit.t < SIX_HOURS) { paint(hit.j); return; }
+
+    fetch("https://api.github.com/repos/AltairKaslana/" + repo + "/releases/latest")
       .then(function (r) { if (!r.ok) throw 0; return r.json(); })
       .then(function (j) {
-        var apk = (j.assets || []).filter(function (a) { return /\.apk$/i.test(a.name); })[0];
-        var url = apk ? apk.browser_download_url : j.html_url;
-        document.querySelectorAll('a[data-repo="' + repo + '"]').forEach(function (a) { a.href = url; });
-        var label = [j.tag_name, apk ? fmtSize(apk.size) : ""].filter(Boolean).join(" · ");
-        document.querySelectorAll('[data-ver="' + repo + '"]').forEach(function (s) { s.textContent = label; });
+        try { sessionStorage.setItem("rel:" + repo, JSON.stringify({ t: Date.now(), j: j })); } catch (e) {}
+        paint(j);
       })
-      .catch(function () {
-        document.querySelectorAll('[data-ver="' + repo + '"]').forEach(function (s) { s.textContent = "Rilis terbaru ada di GitHub"; });
-      });
+      .catch(miss);
   });
-
-  var revs = document.querySelectorAll("[data-reveal]");
-  if ("IntersectionObserver" in window && !reduce) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
-      });
-    }, { threshold: 0.1, rootMargin: "0px 0px -8% 0px" });
-    revs.forEach(function (el) { io.observe(el); });
-  } else {
-    revs.forEach(function (el) { el.classList.add("in"); });
-  }
 })();
