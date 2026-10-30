@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://altairk.my.id/sitemap.xml

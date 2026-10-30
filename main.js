@@ -19,7 +19,9 @@
         var label = [j.tag_name, apk ? fmtSize(apk.size) : ""].filter(Boolean).join(" · ");
         document.querySelectorAll('[data-ver="' + repo + '"]').forEach(function (s) { s.textContent = label; });
       })
-      .catch(function () { /* keep default /releases link; version stays blank */ });
+      .catch(function () {
+        document.querySelectorAll('[data-ver="' + repo + '"]').forEach(function (s) { s.textContent = "Rilis terbaru ada di GitHub"; });
+      });
   });
 
   var revs = document.querySelectorAll("[data-reveal]");

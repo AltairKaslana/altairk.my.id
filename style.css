@@ -46,6 +46,8 @@ h1,h2,h3{font-family:var(--font-d);letter-spacing:-.02em;line-height:1.1;margin:
 p{margin:0}
 ::selection{background:var(--accent);color:var(--accent-ink)}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.skip{position:absolute;left:-9999px;top:0;z-index:50;background:var(--accent);color:var(--accent-ink);font-family:var(--font-b);font-weight:600;font-size:.95rem;padding:14px 20px;border-radius:0 0 var(--r-md) var(--r-md)}
+.skip:focus{left:0}
 
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
 
@@ -173,6 +175,7 @@ p{margin:0}
 .dl h2{font-size:clamp(1.5rem,3vw,2rem);font-weight:700}
 .dl p{margin-top:12px;color:var(--text-2)}
 .dl .dl-actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.dl .ver{margin-top:12px}
 .note{margin-top:18px;color:var(--text-3);font-size:.86rem;max-width:70ch}
 .note code{font-family:var(--font-m);font-size:.82rem;color:var(--text-2);background:var(--surface-2);padding:2px 7px;border-radius:6px}
 
