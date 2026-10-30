@@ -6,7 +6,7 @@
 <title>YTM Relay - putar YouTube Music di HP lama</title>
 <meta name="description" content="YTM Relay: relay pribadi untuk memutar YouTube Music di HP Android lama tanpa Play Services. Tanpa iklan, tanpa pelacakan.">
 <meta property="og:title" content="YTM Relay - putar YouTube Music di HP lama">
-<meta property="og:description" content="Relay pribadi untuk HP Android 4.4+ tanpa Play Services. Pencarian, pustaka, dan pemutaran lewat server sendiri.">
+<meta property="og:description" content="Relay pribadi untuk HP Android 4.4+ tanpa Play Services. Pencarian, pustaka, dan pemutaran lewat server sendiri, bisa dipakai beberapa orang masing-masing dengan akun Google-nya.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://altairk.my.id/ytm-relay.html">
 <meta property="og:site_name" content="Altair">
@@ -17,7 +17,7 @@
 <meta property="og:image:alt" content="Altair: YTM Relay dan Zylo, dua aplikasi buatan sendiri">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="YTM Relay - putar YouTube Music di HP lama">
-<meta name="twitter:description" content="Relay pribadi untuk HP Android 4.4+ tanpa Play Services. Pencarian, pustaka, dan pemutaran lewat server sendiri.">
+<meta name="twitter:description" content="Relay pribadi untuk HP Android 4.4+ tanpa Play Services. Pencarian, pustaka, dan pemutaran lewat server sendiri, bisa dipakai beberapa orang masing-masing dengan akun Google-nya.">
 <meta name="twitter:image" content="https://altairk.my.id/assets/og.png">
 <link rel="canonical" href="https://altairk.my.id/ytm-relay.html">
 <meta name="theme-color" content="#0D0B08">
@@ -48,7 +48,7 @@
       <span class="mono">Relay pribadi</span>
       <h1 style="margin-top:16px">YTM Relay</h1>
       <div class="hero-foot">
-        <p class="lede">YouTube Music resmi butuh Play Services dan TLS modern, jadi HP seperti Xperia E1 tidak bisa membukanya lagi. Aplikasi ini bicara ke server kecil milik sendiri, dan server itu yang mengurus YouTube.</p>
+        <p class="lede">YouTube Music resmi butuh Play Services dan TLS modern, jadi HP seperti Xperia E1 tidak bisa membukanya lagi. Aplikasi ini bicara ke server kecil milik sendiri, dan server itu yang mengurus YouTube. Satu server bisa dipakai beberapa orang, masing-masing dengan akun Google-nya sendiri.</p>
         <div class="actions">
           <a class="btn btn-primary" data-repo="ytm-relay" href="https://github.com/AltairKaslana/ytm-relay/releases">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/><path d="M7 11l5 5 5-5"/><path d="M12 4v12"/></svg>
@@ -64,8 +64,8 @@
     <div class="wrap">
       <div><span class="k">Rilis terbaru</span><span class="v" data-ver="ytm-relay">5.1</span></div>
       <div><span class="k">Android</span><span class="v">4.4 ke atas</span></div>
-      <div><span class="k">Pustaka</span><span class="v">di server</span></div>
-      <div><span class="k">Server</span><span class="v">milik sendiri</span></div>
+      <div><span class="k">Akun Google</span><span class="v">per pengguna</span></div>
+      <div><span class="k">Server</span><span class="v">bisa dibagi</span></div>
       <div><span class="k">Iklan</span><span class="v">tidak ada</span></div>
     </div>
   </div>
@@ -90,14 +90,14 @@
           <span class="n">01</span>
           <div>
             <h3>Server jalan di rumah</h3>
-            <p>Satu proses Python menempel di alamat sendiri, dijaga token dan PIN. Server inilah yang punya koneksi TLS modern, bukan HP-nya.</p>
+            <p>Satu proses Python menempel di alamat sendiri, dijaga token sesi. Setiap akun menyimpan kredensial Google-nya sendiri di server, tidak dibagi dengan pengguna lain. Server inilah yang punya koneksi TLS modern, bukan HP-nya.</p>
           </div>
         </div>
         <div class="step">
           <span class="n">02</span>
           <div>
             <h3>HP lama membuka aplikasi</h3>
-            <p>APK-nya kecil dan tidak butuh Play Services. Alamat server dan token diisi sekali di pengaturan.</p>
+            <p>APK-nya kecil dan tidak butuh Play Services. Alamat server sudah tertanam di aplikasi, tidak perlu diketik; cukup masuk dengan akun profil, dan mendaftar pakai kode undangan dari pemilik server.</p>
           </div>
         </div>
         <div class="step">
@@ -123,11 +123,27 @@
       <h2>Isi aplikasinya</h2>
       <ul class="list-grid">
         <li><span>Cari lagu, album, artis, playlist</span><span>4 filter</span></li>
-        <li><span>Putar tanpa login Google di HP</span><span>token + PIN</span></li>
+        <li><span>Putar tanpa login Google di HP</span><span>akun profil</span></li>
+        <li><span>Pustaka YouTube lewat akun Google sendiri</span><span>per akun</span></li>
         <li><span>Riwayat dan favorit tersimpan</span><span>di server</span></li>
         <li><span>Lagu berikutnya disiapkan lebih awal</span><span>prefetch</span></li>
         <li><span>Jalan di Android 4.4 tanpa Play Services</span><span>KitKat</span></li>
+        <li><span>Dipakai beberapa orang sekaligus</span><span>multi akun</span></li>
         <li><span>Tanpa iklan, tanpa pelacakan</span><span>selamanya</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="list">
+    <div class="wrap">
+      <h2>Satu server, beberapa orang</h2>
+      <ul class="list-grid">
+        <li><span>Daftar akun pakai kode undangan</span><span>sekali pakai</span></li>
+        <li><span>Kredensial Google disimpan per akun</span><span>tidak dibagi</span></li>
+        <li><span>Tanpa menautkan Google pun tetap bisa cari dan putar</span><span>anonim</span></li>
+        <li><span>Kuota dua lagu bersamaan per akun</span><span>per akun</span></li>
+        <li><span>Pencarian dibatasi 60 kali per 10 menit</span><span>per akun</span></li>
+        <li><span>Alamat server tidak ditampilkan di layar masuk</span><span>lewat aplikasi</span></li>
       </ul>
     </div>
   </section>
