@@ -1,21 +1,32 @@
 /* altairk.my.id - direction "studio": type-led, product-first.
-   Dark theme is a brand decision, not a default: both apps ship dark with the
-   same cyan accent, so the site reads as one product family.
-   One accent (cyan) is used for the primary action, active nav, and links.
+   Palette: warm studio (near-black charcoal with a warm cast, brass accent).
+   Why not cyan on blue-black: that pairing is the default family of generated
+   pages, and an electric cyan at full chroma vibrates at the edges of text on a
+   dark field. Warm neutrals also sit next to the product's own photographs the
+   way a gallery wall sits behind a print, instead of cooling them down.
+   The site accent is brass; the two app identities (Zylo cyan, YTM Relay
+   orange) appear only where the app itself is shown, so they read as brands
+   rather than as a second site accent.
    Type: Space Grotesk (display), Plus Jakarta Sans (body), JetBrains Mono (data). */
 
 :root{
-  --bg:#080B0E;
-  --panel:#0E1318;
-  --panel-2:#121820;
-  --line:rgba(255,255,255,.1);
-  --line-2:rgba(255,255,255,.17);
-  --text:#F1F5F9;
-  --text-2:#A7B3BF;
-  --text-3:#78868F;
-  --accent:#22D3EE;
-  --accent-strong:#4FE0F4;
-  --accent-ink:#04222B;
+  --bg:#0D0B08;
+  --panel:#171410;
+  --panel-2:#211D19;
+  --panel-3:#2B2722;
+  --line:rgba(255,247,238,.11);
+  --line-2:rgba(255,247,238,.19);
+  --text:#F5F1EC;
+  --text-2:#BFBAB2;
+  --text-3:#9A948B;
+  --accent:#E4BE5B;
+  --accent-strong:#F0D17D;
+  --accent-soft:#2C2213;
+  --accent-ink:#2D1B04;
+  --app-zylo:#22D3EE;
+  --app-zylo-ink:#04222B;
+  --app-ytm:#F97316;
+  --app-ytm-ink:#241000;
   --font-d:"Space Grotesk",system-ui,-apple-system,sans-serif;
   --font-b:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --font-m:"JetBrains Mono",ui-monospace,SFMono-Regular,monospace;
@@ -56,7 +67,7 @@ header.site{padding:14px 0;border-bottom:1px solid var(--line)}
 .hero{padding:52px 0 0}
 .hero h1{font-size:clamp(2.5rem,7vw,5.2rem);max-width:16ch}
 .hero h1 em{font-style:normal;color:var(--accent)}
-.hero-foot{display:grid;grid-template-columns:1fr .85fr;gap:48px;align-items:end;margin-top:32px;padding-bottom:38px}
+.hero-foot{display:grid;grid-template-columns:1fr .85fr;gap:48px;align-items:end;margin-top:40px;padding:26px 0 38px;border-top:1px solid var(--line)}
 .lede{font-size:1.12rem;color:var(--text-2);max-width:52ch}
 .actions{display:flex;gap:22px;align-items:center;justify-content:flex-end;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:.92rem;line-height:1;padding:14px 20px;border-radius:var(--r-btn);border:1px solid transparent;transition:background .18s var(--ease),border-color .18s var(--ease),color .18s var(--ease),transform .12s var(--ease)}
@@ -83,7 +94,7 @@ figcaption{font-family:var(--font-m);font-size:.7rem;color:var(--text-3);padding
 .app+.app{border-top:1px solid var(--line)}
 .app.rev .txt{order:2}
 .app.rev .fig{order:1}
-.app h2{font-size:clamp(1.9rem,3.6vw,3rem);margin-top:14px}
+.app h2{display:flex;align-items:center;gap:15px;font-size:clamp(1.9rem,3.6vw,3rem);margin-top:0}
 .app .desc{margin-top:20px;color:var(--text-2);max-width:44ch}
 .kv{margin-top:28px;border-top:1px solid var(--line)}
 .kv div{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px solid var(--line);font-size:.9rem}
@@ -93,12 +104,22 @@ figcaption{font-family:var(--font-m);font-size:.7rem;color:var(--text-3);padding
 .app .go svg{width:14px;height:14px;transition:transform .18s var(--ease)}
 .app .go:hover svg{transform:translateX(3px)}
 
+/* App identity marks. These are the only place the two product colours appear on
+   the site, so each product name is tied to its own brand instead of the site
+   accent. The mark holds the initial, never the name, so it adds identity
+   without repeating the heading. Measured on --bg / --panel and on the app
+   panels: cyan 10.87 / 10.09, orange 7.00 / 6.50; ink on the mark 9.16 / 6.52. */
+.mark{display:grid;place-items:center;width:38px;height:38px;border-radius:8px;font-family:var(--font-m);font-size:1.1rem;font-weight:500;flex:none}
+.mark.zylo{background:var(--app-zylo);color:var(--app-zylo-ink)}
+.mark.ytm{background:var(--app-ytm);color:var(--app-ytm-ink)}
+.mark.lg{width:48px;height:48px;border-radius:10px;font-size:1.3rem}
+
 .quote{padding:84px 0;border-top:1px solid var(--line)}
 .quote p{font-family:var(--font-d);font-size:clamp(1.35rem,2.7vw,2.05rem);letter-spacing:-.02em;line-height:1.32;max-width:34ch}
 .quote .by{margin-top:22px}
 
 .dl{padding:72px 0;border-top:1px solid var(--line)}
-.dl-in{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;border:1px solid var(--line);border-radius:var(--r-panel);background:var(--panel);padding:34px}
+.dl-in{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;border:1px solid var(--line);border-radius:var(--r-panel);background:var(--panel-2);padding:34px}
 .dl h2{font-size:clamp(1.5rem,2.6vw,2rem)}
 .dl p{margin-top:10px;color:var(--text-2);font-size:.95rem;max-width:48ch}
 .dl-actions{display:flex;flex-direction:column;gap:12px;align-items:flex-end}
