@@ -51,7 +51,7 @@ ul{margin:0;padding:0;list-style:none}
 .skip:focus{left:12px}
 
 .wrap{max-width:var(--wrap);margin:0 auto;padding:0 32px}
-.mono{font-family:var(--font-m);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--text-3)}
+.mono{font-family:var(--font-m);font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--text-3)}
 
 header.site{padding:14px 0;border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
@@ -88,7 +88,7 @@ figure{margin:0}
 .ph{border:1px solid var(--line);border-radius:var(--r-panel);overflow:hidden;background:var(--panel);transition:border-color .2s var(--ease)}
 a.ph:hover{border-color:var(--line-2)}
 .ph img{width:100%;height:auto}
-figcaption{font-family:var(--font-m);font-size:.7rem;color:var(--text-3);padding-top:9px;letter-spacing:.03em;line-height:1.5}
+figcaption{font-family:var(--font-m);font-size:.75rem;color:var(--text-3);padding-top:9px;letter-spacing:.03em;line-height:1.5}
 
 .app{padding:84px 0;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
 .app+.app{border-top:1px solid var(--line)}
@@ -123,12 +123,12 @@ figcaption{font-family:var(--font-m);font-size:.7rem;color:var(--text-3);padding
 .dl h2{font-size:clamp(1.5rem,2.6vw,2rem)}
 .dl p{margin-top:10px;color:var(--text-2);font-size:.95rem;max-width:48ch}
 .dl-actions{display:flex;flex-direction:column;gap:12px;align-items:flex-end}
-.dl-actions .ver{font-family:var(--font-m);font-size:.72rem;color:var(--text-3);letter-spacing:.04em}
+.dl-actions .ver{font-family:var(--font-m);font-size:.75rem;color:var(--text-3);letter-spacing:.04em}
 
 .facts-strip{display:flex;flex-wrap:wrap;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .facts-strip div{padding:18px 26px 18px 0;margin-right:26px;border-right:1px solid var(--line)}
 .facts-strip div:last-child{border-right:0;margin-right:0;padding-right:0}
-.facts-strip .k{display:block;font-family:var(--font-m);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-3)}
+.facts-strip .k{display:block;font-family:var(--font-m);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-3)}
 .facts-strip .v{display:block;font-family:var(--font-m);font-size:.95rem;margin-top:4px}
 
 .steps{padding:72px 0;border-top:1px solid var(--line)}
@@ -136,7 +136,7 @@ figcaption{font-family:var(--font-m);font-size:.7rem;color:var(--text-3);padding
 .step-list{margin-top:36px}
 .step{display:grid;grid-template-columns:52px 1fr;gap:22px;padding:22px 0;border-top:1px solid var(--line)}
 .step:last-child{border-bottom:1px solid var(--line)}
-.step .n{font-family:var(--font-m);font-size:.74rem;color:var(--text-3);letter-spacing:.08em;padding-top:5px}
+.step .n{font-family:var(--font-m);font-size:.75rem;color:var(--text-3);letter-spacing:.08em;padding-top:5px}
 .step h3{font-size:1.02rem;font-family:var(--font-b);font-weight:700;letter-spacing:0;line-height:1.4}
 .step p{margin-top:6px;color:var(--text-2);font-size:.94rem;max-width:62ch}
 
@@ -165,6 +165,26 @@ footer.site{border-top:1px solid var(--line);padding:30px 0 46px}
 @media (max-width:1000px){
   .shots.quad{grid-template-columns:repeat(2,1fr)}
   .list-grid{grid-template-columns:1fr;gap:0}
+}
+/* Strip fakta di HP jadi daftar label-nilai satu kolom: lima item dalam grid dua
+   kolom selalu menyisakan satu sel kosong di ujung, dan garis pemisah wrap-nya
+   menggantung. Baris penuh lebih rapi dan sejalan dengan .kv di halaman ini. */
+@media (max-width:700px){
+  .facts-strip .wrap{display:grid;grid-template-columns:1fr}
+  .facts-strip .wrap > div{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-right:0;border-right:0;padding:12px 0;border-bottom:1px solid var(--line)}
+  .facts-strip .wrap > div:last-child{border-bottom:0}
+  .facts-strip .v{margin-top:0}
+}
+/* Galeri beranda jadi 2 kolom di HP: dua gambar penuh bertumpuk memakan hampir
+   dua layar gulir, sedangkan versi besarnya ada di halaman masing-masing app.
+   Tinggi kedua tile disamakan (align stretch) supaya rasio 3:5 dan 9:20 tidak
+   menyisakan lubang kosong di bawah kolom yang lebih pendek. */
+@media (max-width:640px){
+  .band{padding:24px 0}
+  .band .shots:not(.trio){grid-template-columns:1fr 1fr;gap:14px;align-items:stretch}
+  .band .shots:not(.trio) figure{display:flex;flex-direction:column}
+  .band .shots:not(.trio) .ph{flex:1;display:grid;align-content:center}
+  .band .shots:not(.trio) figcaption{padding-top:8px}
 }
 @media (max-width:900px){
   .hero-foot{grid-template-columns:1fr;gap:24px}
