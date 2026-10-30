@@ -109,7 +109,7 @@ figcaption{font-family:var(--font-m);font-size:.7rem;color:var(--text-3);padding
    accent. The mark holds the initial, never the name, so it adds identity
    without repeating the heading. Measured on --bg / --panel and on the app
    panels: cyan 10.87 / 10.09, orange 7.00 / 6.50; ink on the mark 9.16 / 6.52. */
-.mark{display:grid;place-items:center;width:38px;height:38px;border-radius:8px;font-family:var(--font-m);font-size:1.1rem;font-weight:500;flex:none}
+.mark{display:grid;place-items:center;width:38px;height:38px;border-radius:8px;font-family:var(--font-m);font-size:1.1rem;font-weight:700;flex:none}
 .mark.zylo{background:var(--app-zylo);color:var(--app-zylo-ink)}
 .mark.ytm{background:var(--app-ytm);color:var(--app-ytm-ink)}
 .mark.lg{width:48px;height:48px;border-radius:10px;font-size:1.3rem}
