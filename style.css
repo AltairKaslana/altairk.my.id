@@ -162,12 +162,25 @@ footer.site{border-top:1px solid var(--line);padding:30px 0 46px}
 .e404 p{margin-top:20px;color:var(--text-2);max-width:46ch}
 .e404 .actions{justify-content:flex-start;margin-top:30px}
 
+/* Urutan media query menurun: yang paling sempit terakhir, supaya cascade-nya
+   jelas dan tidak perlu saling menimpa. */
 @media (max-width:1000px){
   .shots.quad{grid-template-columns:repeat(2,1fr)}
   .list-grid{grid-template-columns:1fr;gap:0}
 }
+@media (max-width:900px){
+  .hero-foot{grid-template-columns:1fr;gap:24px}
+  .actions{justify-content:flex-start}
+  .shots{grid-template-columns:1fr}
+  .shots.trio{grid-template-columns:1fr 1fr;gap:16px}
+  .app{grid-template-columns:1fr;gap:32px;padding:56px 0}
+  .app.rev .txt,.app.rev .fig{order:0}
+  .why-grid{grid-template-columns:1fr;gap:24px}
+  .dl-in{grid-template-columns:1fr;gap:22px;padding:24px}
+  .dl-actions{align-items:flex-start}
+}
 /* Strip fakta di HP jadi daftar label-nilai satu kolom: lima item dalam grid dua
-   kolom selalu menyisakan satu sel kosong di ujung, dan garis pemisah wrap-nya
+   kolom menyisakan satu sel kosong di ujung dan garis pemisah wrap-nya
    menggantung. Baris penuh lebih rapi dan sejalan dengan .kv di halaman ini. */
 @media (max-width:700px){
   .facts-strip .wrap{display:grid;grid-template-columns:1fr}
@@ -177,32 +190,21 @@ footer.site{border-top:1px solid var(--line);padding:30px 0 46px}
 }
 /* Galeri beranda jadi 2 kolom di HP: dua gambar penuh bertumpuk memakan hampir
    dua layar gulir, sedangkan versi besarnya ada di halaman masing-masing app.
-   Tinggi kedua tile disamakan (align stretch) supaya rasio 3:5 dan 9:20 tidak
-   menyisakan lubang kosong di bawah kolom yang lebih pendek. */
+   Tinggi kedua tile disamakan supaya rasio 3:5 dan 9:20 tidak menyisakan lubang,
+   dan kotak tile-nya dibuat polos (tanpa bingkai) supaya sisa tinggi itu tidak
+   terlihat sebagai ruang kosong di dalam bingkai. */
 @media (max-width:640px){
   .band{padding:24px 0}
   .band .shots:not(.trio){grid-template-columns:1fr 1fr;gap:14px;align-items:stretch}
   .band .shots:not(.trio) figure{display:flex;flex-direction:column}
-  .band .shots:not(.trio) .ph{flex:1;display:grid;align-content:center}
+  .band .shots:not(.trio) .ph{flex:1;display:grid;align-content:center;border:0;background:transparent;border-radius:0}
   .band .shots:not(.trio) figcaption{padding-top:8px}
-}
-@media (max-width:900px){
-  .hero-foot{grid-template-columns:1fr;gap:24px}
-  .actions{justify-content:flex-start}
-  .shots,.shots.trio{grid-template-columns:1fr}
-  .shots.trio{grid-template-columns:1fr 1fr;gap:16px}
-  .app{grid-template-columns:1fr;gap:32px;padding:56px 0}
-  .app.rev .txt,.app.rev .fig{order:0}
-  .why-grid{grid-template-columns:1fr;gap:24px}
-  .dl-in{grid-template-columns:1fr;gap:22px;padding:24px}
-  .dl-actions{align-items:flex-start}
 }
 @media (max-width:560px){
   .wrap{padding:0 20px}
   body{font-size:16px}
   .nav-links{gap:18px;font-size:.84rem}
   .hero{padding-top:34px}
-  .facts-strip div{padding:14px 18px 14px 0;margin-right:18px}
   .step{grid-template-columns:38px 1fr;gap:14px}
 }
 @media (prefers-reduced-motion:reduce){
