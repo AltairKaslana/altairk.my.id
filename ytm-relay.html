@@ -6,7 +6,7 @@
 <title>YTM Relay - putar YouTube Music di HP lama</title>
 <meta name="description" content="YTM Relay: relay pribadi untuk memutar YouTube Music di HP Android lama tanpa Play Services. Tanpa iklan, tanpa pelacakan.">
 <meta property="og:title" content="YTM Relay - putar YouTube Music di HP lama">
-<meta property="og:description" content="Relay pribadi untuk HP Android 4.4+ tanpa Play Services. Pustaka, pencarian, dan pemutaran lewat server sendiri.">
+<meta property="og:description" content="Relay pribadi untuk HP Android 4.4+ tanpa Play Services. Pencarian, pustaka, dan pemutaran lewat server sendiri.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://altairk.my.id/ytm-relay.html">
 <meta property="og:site_name" content="Altair">
@@ -17,10 +17,10 @@
 <meta property="og:image:alt" content="Altair: YTM Relay dan Zylo, dua aplikasi buatan sendiri">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="YTM Relay - putar YouTube Music di HP lama">
-<meta name="twitter:description" content="Relay pribadi untuk HP Android 4.4+ tanpa Play Services. Pustaka, pencarian, dan pemutaran lewat server sendiri.">
+<meta name="twitter:description" content="Relay pribadi untuk HP Android 4.4+ tanpa Play Services. Pencarian, pustaka, dan pemutaran lewat server sendiri.">
 <meta name="twitter:image" content="https://altairk.my.id/assets/og.png">
 <link rel="canonical" href="https://altairk.my.id/ytm-relay.html">
-<meta name="theme-color" content="#0B0F14">
+<meta name="theme-color" content="#080B0E">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2322D3EE'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='16' font-weight='700' text-anchor='middle' fill='%2304222B'%3EY%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,10 +30,10 @@
 <body>
 <a class="skip" href="#main">Lompat ke konten</a>
 
-<header class="nav">
-  <div class="wrap nav-in">
-    <a class="brand" href="index.html"><span class="glyph">A</span>Altair</a>
-    <nav class="nav-links">
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="index.html">Altair</a>
+    <nav class="nav-links" aria-label="Utama">
       <a href="index.html">Beranda</a>
       <a href="ytm-relay.html" aria-current="page">YTM Relay</a>
       <a href="zylo.html">Zylo</a>
@@ -43,99 +43,132 @@
 </header>
 
 <main id="main">
-  <section class="apphero">
+  <section class="hero">
     <div class="wrap">
-      <div class="mark" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 17m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"/><path d="M16 17m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"/><path d="M9 17l0 -13l10 0l0 13"/><path d="M9 8l10 0"/></svg>
-      </div>
-      <h1>YTM Relay</h1>
-      <p class="tag">Putar musik YouTube Music, bahkan di HP lama.</p>
-      <p class="desc">Relay pribadi untuk Android 4.4+ tanpa Play Services. Aplikasi tipis bicara ke server sendiri, server yang urus YouTube. Pencarian, pustaka, dan pemutaran tetap jalan. Tanpa iklan, tanpa pelacakan.</p>
-      <div class="hero-cta">
-        <a class="btn btn-primary" data-repo="ytm-relay" href="https://github.com/AltairKaslana/ytm-relay/releases">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2"/><path d="M7 11l5 5l5 -5"/><path d="M12 4l0 12"/></svg>
-          Unduh APK
-        </a>
-        <a class="btn btn-ghost" href="https://github.com/AltairKaslana/ytm-relay">
-          Lihat di GitHub
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"/><path d="M11 13l9 -9"/><path d="M15 4h5v5"/></svg>
-        </a>
-        <span class="ver" data-ver="ytm-relay">Memeriksa rilis terbaru</span>
+      <span class="mono">Relay pribadi</span>
+      <h1 style="margin-top:16px">YTM Relay</h1>
+      <div class="hero-foot">
+        <p class="lede">YouTube Music resmi butuh Play Services dan TLS modern, jadi HP seperti Xperia E1 tidak bisa membukanya lagi. Aplikasi ini bicara ke server kecil milik sendiri, dan server itu yang mengurus YouTube.</p>
+        <div class="actions">
+          <a class="btn btn-primary" data-repo="ytm-relay" href="https://github.com/AltairKaslana/ytm-relay/releases">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/><path d="M7 11l5 5 5-5"/><path d="M12 4v12"/></svg>
+            Unduh APK
+          </a>
+          <a class="ghost-link" href="https://github.com/AltairKaslana/ytm-relay">Lihat di GitHub</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="wrap" data-reveal>
-      <div class="section-head">
-        <h2>Buat HP lama tetap bisa dengar musik.</h2>
-        <p>YouTube Music resmi butuh Play Services dan TLS modern. HP tua seperti Xperia E1 (Android 4.4) gagal handshake HTTPS, jadi aplikasinya tidak bisa dipakai. YTM Relay mengambil alih bagian berat itu.</p>
+  <div class="facts-strip">
+    <div class="wrap" style="display:flex;flex-wrap:wrap">
+      <div><span class="k">Rilis terbaru</span><span class="v" data-ver="ytm-relay">5.1</span></div>
+      <div><span class="k">Android</span><span class="v">4.4 ke atas</span></div>
+      <div><span class="k">Pustaka</span><span class="v">di server</span></div>
+      <div><span class="k">Server</span><span class="v">milik sendiri</span></div>
+      <div><span class="k">Iklan</span><span class="v">tidak ada</span></div>
+    </div>
+  </div>
+
+  <div class="band" style="border-top:0;padding-top:34px">
+    <div class="wrap shots trio">
+      <figure><a class="ph" href="assets/ytm-1.jpg"><img src="assets/ytm-1.jpg" alt="Beranda YTM Relay dengan Trending songs for you dan All Time Hits" width="480" height="800" fetchpriority="high"></a><figcaption>Beranda, trending dan all time hits</figcaption></figure>
+      <figure><a class="ph" href="assets/ytm-2.jpg"><img src="assets/ytm-2.jpg" alt="Beranda YTM Relay bagian Rekomendasi untukmu dan Quick picks" width="480" height="800"></a><figcaption>Rekomendasi dan quick picks</figcaption></figure>
+      <figure><a class="ph" href="assets/ytm-3.jpg"><img src="assets/ytm-3.jpg" alt="Beranda YTM Relay bagian playlist komunitas" width="480" height="800"></a><figcaption>Playlist komunitas</figcaption></figure>
+      <figure><a class="ph" href="assets/ytm-4.jpg"><img src="assets/ytm-4.jpg" alt="Pencarian YTM Relay dengan filter dan riwayat" width="480" height="800"></a><figcaption>Cari, filter dan riwayat</figcaption></figure>
+      <figure><a class="ph" href="assets/ytm-5.jpg"><img src="assets/ytm-5.jpg" alt="Pencarian YTM Relay saat mengetik muncul saran" width="480" height="800"></a><figcaption>Saran saat mengetik</figcaption></figure>
+      <figure><a class="ph" href="assets/ytm-6.jpg"><img src="assets/ytm-6.jpg" alt="Pemutar penuh YTM Relay dengan kontrol lengkap" width="480" height="800"></a><figcaption>Pemutar, kontrol penuh</figcaption></figure>
+      <figure><a class="ph" href="assets/ytm-7.jpg"><img src="assets/ytm-7.jpg" alt="Tab Pustaka YTM Relay berisi Favorit dan Riwayat" width="480" height="800"></a><figcaption>Pustaka, favorit dan riwayat</figcaption></figure>
+    </div>
+  </div>
+
+  <section class="steps">
+    <div class="wrap">
+      <h2>Yang terjadi saat kamu memutar lagu</h2>
+      <div class="step-list">
+        <div class="step">
+          <span class="n">01</span>
+          <div>
+            <h3>Server jalan di rumah</h3>
+            <p>Satu proses Python menempel di alamat sendiri, dijaga token dan PIN. Server inilah yang punya koneksi TLS modern, bukan HP-nya.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="n">02</span>
+          <div>
+            <h3>HP lama membuka aplikasi</h3>
+            <p>APK-nya kecil dan tidak butuh Play Services. Alamat server dan token diisi sekali di pengaturan.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="n">03</span>
+          <div>
+            <h3>Aplikasi minta daftar lagu</h3>
+            <p>Pencarian dan rekomendasi dikirim ke server, lalu server mengembalikan daftar yang siap diputar.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="n">04</span>
+          <div>
+            <h3>Audio dialirkan, pustaka disimpan</h3>
+            <p>Lagu berikutnya disiapkan lebih awal supaya pergantian tidak putus. Riwayat dan favorit tersimpan di sisi server, jadi tetap ada meski HP-nya diganti.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="wrap" data-reveal>
-      <div class="section-head">
-        <h2>Fitur</h2>
-      </div>
-      <ul class="features">
-        <li><h3>Putar tanpa akun Google</h3><p>Cari dan streaming lewat relay, tanpa login Google di HP.</p></li>
-        <li><h3>Pustaka & riwayat lokal</h3><p>Daftar putar dan yang terakhir diputar tersimpan di server sendiri.</p></li>
-        <li><h3>Token & PIN</h3><p>Akses dijaga token plus PIN, rate-limit di endpoint login.</p></li>
-        <li><h3>Cache & auto-prefetch</h3><p>Lagu berikutnya disiapkan lebih awal, pergantian lebih mulus.</p></li>
-        <li><h3>Ramah HP lama</h3><p>Android 4.4 (KitKat) ke atas, tanpa Play Services.</p></li>
-        <li><h3>Tanpa iklan & pelacakan</h3><p>Data musik tetap milikmu, jalan di infrastrukturmu.</p></li>
+  <section class="list">
+    <div class="wrap">
+      <h2>Isi aplikasinya</h2>
+      <ul class="list-grid">
+        <li><span>Cari lagu, album, artis, playlist</span><span>4 filter</span></li>
+        <li><span>Putar tanpa login Google di HP</span><span>token + PIN</span></li>
+        <li><span>Riwayat dan favorit tersimpan</span><span>di server</span></li>
+        <li><span>Lagu berikutnya disiapkan lebih awal</span><span>prefetch</span></li>
+        <li><span>Jalan di Android 4.4 tanpa Play Services</span><span>KitKat</span></li>
+        <li><span>Tanpa iklan, tanpa pelacakan</span><span>selamanya</span></li>
       </ul>
     </div>
   </section>
 
-  <section class="section">
-    <div class="wrap" data-reveal>
-      <div class="section-head">
-        <h2>Tampilan</h2>
-        <p>Antarmuka ringkas, fokus pada pencarian dan pemutaran. Screenshot asli dari Xperia E1, Android 4.4.</p>
-      </div>
-      <div class="shots">
-        <a class="shot has-img" href="assets/ytm-1.jpg"><img class="r35" src="assets/ytm-1.jpg" alt="Beranda YTM Relay dengan bagian Trending songs for you dan All Time Hits, mini player memutar lagu Iris" width="480" height="800"><span class="cap">Beranda: trending dan all time hits</span></a>
-        <a class="shot has-img" href="assets/ytm-2.jpg"><img class="r35" src="assets/ytm-2.jpg" alt="Beranda YTM Relay bagian Rekomendasi untukmu dan Quick picks dengan lagu Primadona dan Senja Sudut Kota" width="480" height="800"><span class="cap">Beranda: rekomendasi dan quick picks</span></a>
-        <a class="shot has-img" href="assets/ytm-3.jpg"><img class="r35" src="assets/ytm-3.jpg" alt="Beranda YTM Relay bagian Trending community playlists dan Today's Indonesian Hits" width="480" height="800"><span class="cap">Beranda: playlist komunitas</span></a>
-        <a class="shot has-img" href="assets/ytm-4.jpg"><img class="r35" src="assets/ytm-4.jpg" alt="Halaman pencarian YTM Relay dengan filter Lagu, Album, Artis, Playlist dan riwayat lagu yang dicari terakhir" width="480" height="800"><span class="cap">Cari: filter kategori dan riwayat</span></a>
-        <a class="shot has-img" href="assets/ytm-5.jpg"><img class="r35" src="assets/ytm-5.jpg" alt="Halaman pencarian YTM Relay saat mengetik spectrum ent, muncul daftar saran pencarian" width="480" height="800"><span class="cap">Cari: saran saat mengetik</span></a>
-        <a class="shot has-img" href="assets/ytm-6.jpg"><img class="r35" src="assets/ytm-6.jpg" alt="Pemutar penuh YTM Relay memutar lagu Iris dengan progres, tombol shuffle, sebelumnya, jeda, berikutnya dan ulangi" width="480" height="800"><span class="cap">Pemutar: kontrol penuh</span></a>
-        <a class="shot has-img" href="assets/ytm-7.jpg"><img class="r35" src="assets/ytm-7.jpg" alt="Tab Pustaka YTM Relay berisi Favorit, Riwayat, dan tombol buat playlist baru" width="480" height="800"><span class="cap">Pustaka: favorit dan riwayat</span></a>
+  <section class="why">
+    <div class="wrap why-grid">
+      <h2>Kenapa dibuat</h2>
+      <div>
+        <p>Xperia E1 saya masih hidup dan baterainya masih bagus. Yang mati cuma aksesnya: YouTube Music resmi menolak handshake HTTPS lama, dan Play Services tidak ada di sana.</p>
+        <p>Daripada membuang HP yang masih bisa dipakai, saya pindahkan bagian beratnya ke server. Hasilnya satu aplikasi tipis yang jalan di perangkat 2014, dengan pustaka yang tetap milik sendiri.</p>
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="wrap" data-reveal>
-      <div class="dl">
-        <div class="dl-txt">
+  <section class="dl" id="unduh">
+    <div class="wrap">
+      <div class="dl-in">
+        <div>
           <h2>Unduh YTM Relay</h2>
-          <p>APK terbaru langsung dari GitHub Releases, bukan dari situs ini.</p>
-          <p class="ver" data-ver="ytm-relay">Memeriksa rilis terbaru</p>
+          <p>APK diambil langsung dari GitHub Releases, bukan dari situs ini. Kalau sudah ada versi lama, uninstall dulu sebelum memasang yang baru.</p>
         </div>
         <div class="dl-actions">
-          <a class="btn btn-primary btn-lg" data-repo="ytm-relay" href="https://github.com/AltairKaslana/ytm-relay/releases">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2"/><path d="M7 11l5 5l5 -5"/><path d="M12 4l0 12"/></svg>
+          <a class="btn btn-primary" data-repo="ytm-relay" href="https://github.com/AltairKaslana/ytm-relay/releases">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/><path d="M7 11l5 5 5-5"/><path d="M12 4v12"/></svg>
             Unduh APK
           </a>
-          <a class="btn btn-ghost btn-lg" href="https://github.com/AltairKaslana/ytm-relay/releases">Riwayat rilis</a>
+          <a class="btn btn-ghost" href="https://github.com/AltairKaslana/ytm-relay/releases">Riwayat rilis</a>
+          <span class="ver" data-ver="ytm-relay">memeriksa rilis</span>
         </div>
       </div>
-      <p class="note">Kalau sudah punya versi lama, <strong>uninstall dulu</strong> sebelum pasang. APK diambil langsung dari GitHub Releases, bukan dari situs ini. Untuk server sendiri, petunjuk ada di repo <code>AltairKaslana/ytm-relay</code>.</p>
     </div>
   </section>
 </main>
 
-<footer class="foot">
-  <div class="wrap foot-in">
-    <span>© 2026 Altair. Dibuat sendiri.</span>
-    <span><a href="https://github.com/AltairKaslana">GitHub</a></span>
+<footer class="site">
+  <div class="wrap foot">
+    <span>Altair, 2026. Dibuat di Jawa Tengah.</span>
+    <span><a href="https://github.com/AltairKaslana">GitHub</a> · <a href="index.html">Beranda</a></span>
   </div>
 </footer>
 
-<script src="main.js"></script>
+<script src="main.js" defer></script>
 </body>
 </html>

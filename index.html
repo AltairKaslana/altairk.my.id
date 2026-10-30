@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Altair - YTM Relay &amp; Zylo</title>
-<meta name="description" content="Dua app buatan sendiri: YTM Relay (relay musik YouTube Music untuk HP lama) dan Zylo (komputer gowes GPS). Tanpa iklan, tanpa pelacakan.">
-<meta name="theme-color" content="#0B0F14">
+<meta name="description" content="Dua aplikasi buatan sendiri: YTM Relay memutar YouTube Music di HP lama, Zylo mencatat gowes dengan peta dan ekspor GPX. Tanpa iklan, tanpa pelacakan.">
+<meta name="theme-color" content="#080B0E">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2322D3EE'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='16' font-weight='700' text-anchor='middle' fill='%2304222B'%3EA%3C/text%3E%3C/svg%3E">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Altair - YTM Relay &amp; Zylo">
-<meta property="og:description" content="Relay musik YouTube Music untuk HP lama + komputer gowes GPS. Tanpa iklan, tanpa pelacakan.">
+<meta property="og:description" content="Relay musik YouTube Music untuk HP lama, dan komputer gowes GPS. Dua-duanya buatan sendiri.">
 <meta property="og:url" content="https://altairk.my.id/">
 <meta property="og:site_name" content="Altair">
 <meta property="og:locale" content="id_ID">
@@ -19,7 +19,7 @@
 <meta property="og:image:alt" content="Altair: YTM Relay dan Zylo, dua aplikasi buatan sendiri">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Altair - YTM Relay &amp; Zylo">
-<meta name="twitter:description" content="Relay musik YouTube Music untuk HP lama + komputer gowes GPS. Tanpa iklan, tanpa pelacakan.">
+<meta name="twitter:description" content="Relay musik YouTube Music untuk HP lama, dan komputer gowes GPS. Dua-duanya buatan sendiri.">
 <meta name="twitter:image" content="https://altairk.my.id/assets/og.png">
 <link rel="canonical" href="https://altairk.my.id/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,10 +30,10 @@
 <body>
 <a class="skip" href="#main">Lompat ke konten</a>
 
-<header class="nav">
-  <div class="wrap nav-in">
-    <a class="brand" href="index.html"><span class="glyph">A</span>Altair</a>
-    <nav class="nav-links">
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="index.html">Altair</a>
+    <nav class="nav-links" aria-label="Utama">
       <a href="index.html" aria-current="page">Beranda</a>
       <a href="ytm-relay.html">YTM Relay</a>
       <a href="zylo.html">Zylo</a>
@@ -44,68 +44,109 @@
 
 <main id="main">
   <section class="hero">
-    <div class="wrap hero-in" data-reveal>
-      <h1>Dua aplikasi yang kubuat sendiri.</h1>
-      <p class="lede"><strong>YTM Relay</strong> memutar YouTube Music di HP lama. <strong>Zylo</strong> mencatat setiap gowes. Dua-duanya tanpa iklan dan tanpa pelacakan.</p>
+    <div class="wrap">
+      <h1>Aplikasi kecil yang <em>kupakai</em> tiap hari.</h1>
+      <div class="hero-foot">
+        <p class="lede">YTM Relay memutar YouTube Music di HP lama tanpa Play Services. Zylo mencatat gowes dengan peta, tanjakan, dan ekspor GPX. Dua-duanya kubangun sendiri, tanpa iklan dan tanpa pelacakan.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#unduh">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/><path d="M7 11l5 5 5-5"/><path d="M12 4v12"/></svg>
+            Unduh APK
+          </a>
+          <a class="ghost-link" href="#aplikasi">Lihat kedua aplikasi</a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="section" style="border-top:0">
-    <div class="wrap appcards" data-reveal>
-      <article class="appcard">
-        <div class="mark" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 17m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"/><path d="M16 17m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"/><path d="M9 17l0 -13l10 0l0 13"/><path d="M9 8l10 0"/></svg>
-        </div>
-        <h3>YTM Relay</h3>
-        <p class="tag">Putar YouTube Music di HP lama.</p>
-        <ul>
-          <li>Putar tanpa login Google</li>
-          <li>Pustaka &amp; riwayat lokal</li>
-          <li>Android 4.4+, tanpa Play Services</li>
-          <li>Tanpa iklan, data milikmu</li>
-        </ul>
-        <div class="appcard-foot">
-          <a class="link-arrow" href="ytm-relay.html">Buka halaman <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l14 0"/><path d="M13 18l6 -6"/><path d="M13 6l6 6"/></svg></a>
-          <a class="btn btn-primary" data-repo="ytm-relay" href="https://github.com/AltairKaslana/ytm-relay/releases">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2"/><path d="M7 11l5 5l5 -5"/><path d="M12 4l0 12"/></svg>
-            Unduh APK
-          </a>
-          <span class="ver" data-ver="ytm-relay">Memeriksa rilis terbaru</span>
-        </div>
-      </article>
+  <div class="band">
+    <div class="wrap shots">
+      <figure>
+        <div class="ph"><img src="assets/ytm-1.jpg" alt="Beranda YTM Relay di Xperia E1" width="480" height="800" fetchpriority="high"></div>
+        <figcaption>YTM Relay, beranda di Xperia E1</figcaption>
+      </figure>
+      <figure>
+        <div class="ph"><img src="assets/zylo-3.jpg" alt="Dashboard Zylo sebelum berangkat" width="576" height="1280"></div>
+        <figcaption>Zylo, dashboard sebelum berangkat</figcaption>
+      </figure>
+    </div>
+  </div>
 
-      <article class="appcard">
-        <div class="mark" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="15" cy="5" r="1"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/></svg>
+  <section class="app" id="aplikasi">
+    <div class="txt">
+      <span class="mono">Aplikasi pertama</span>
+      <h2>YTM Relay</h2>
+      <p class="desc">Relay pribadi ke YouTube Music. Cukup satu server kecil, dan HP Android 4.4 bisa memutar lagu lagi tanpa Play Services dan tanpa login Google.</p>
+      <dl class="kv">
+        <div><dt>Rilis</dt><dd>GitHub Releases</dd></div>
+        <div><dt>Android</dt><dd>4.4 ke atas</dd></div>
+        <div><dt>Server</dt><dd>milik sendiri</dd></div>
+        <div><dt>Pustaka</dt><dd>lokal, di HP</dd></div>
+      </dl>
+      <a class="go" href="ytm-relay.html">Buka halaman YTM Relay <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 18l6-6"/><path d="M13 6l6 6"/></svg></a>
+    </div>
+    <figure class="fig">
+      <div class="ph"><img src="assets/ytm-6.jpg" alt="Pemutar YTM Relay dengan kontrol lengkap" width="480" height="800"></div>
+      <figcaption>Pemutar penuh, lagu sedang berjalan</figcaption>
+    </figure>
+  </section>
+
+  <section class="app rev">
+    <div class="txt">
+      <span class="mono">Aplikasi kedua</span>
+      <h2>Zylo</h2>
+      <p class="desc">Komputer gowes GPS. Kecepatan besar, peta live rute, navigasi layar penuh, dan ringkasan yang bisa dibagikan atau diekspor jadi GPX.</p>
+      <dl class="kv">
+        <div><dt>Rilis</dt><dd>GitHub Releases</dd></div>
+        <div><dt>Android</dt><dd>6.0 ke atas</dd></div>
+        <div><dt>Metrik</dt><dd>10, termasuk tanjakan</dd></div>
+        <div><dt>Ekspor</dt><dd>GPX siap Strava</dd></div>
+      </dl>
+      <a class="go" href="zylo.html">Buka halaman Zylo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 18l6-6"/><path d="M13 6l6 6"/></svg></a>
+    </div>
+    <figure class="fig">
+      <div class="ph"><img src="assets/zylo-1.jpg" alt="Ringkasan gowes Zylo dengan peta rute" width="576" height="1280"></div>
+      <figcaption>Ringkasan gowes, peta dan angka</figcaption>
+    </figure>
+  </section>
+
+  <section class="quote">
+    <div class="wrap">
+      <p>Keduanya lahir dari kebutuhan sendiri. Xperia E1 di laci masih layak dipakai, dan aplikasi gowes yang menagih langganan untuk fitur sederhana terasa berlebihan.</p>
+      <div class="by mono">Dibuat dan dirawat sendiri, Jawa Tengah</div>
+    </div>
+  </section>
+
+  <section class="dl" id="unduh">
+    <div class="wrap">
+      <div class="dl-in">
+        <div>
+          <h2>Ambil APK terbaru</h2>
+          <p>Langsung dari GitHub Releases. Tidak ada pendaftaran, tidak ada akun, tidak ada iklan di dalam aplikasi.</p>
         </div>
-        <h3>Zylo</h3>
-        <p class="tag">Komputer gowes GPS.</p>
-        <ul>
-          <li>Metrik + peta live rute</li>
-          <li>Navigasi layar-penuh</li>
-          <li>Lap, ekspor GPX, Strava</li>
-          <li>Android 6.0+, tanpa iklan</li>
-        </ul>
-        <div class="appcard-foot">
-          <a class="link-arrow" href="zylo.html">Buka halaman <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l14 0"/><path d="M13 18l6 -6"/><path d="M13 6l6 6"/></svg></a>
-          <a class="btn btn-primary" data-repo="cyclocomp" href="https://github.com/AltairKaslana/cyclocomp/releases">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2"/><path d="M7 11l5 5l5 -5"/><path d="M12 4l0 12"/></svg>
-            Unduh APK
+        <div class="dl-actions">
+          <a class="btn btn-primary" data-repo="ytm-relay" href="https://github.com/AltairKaslana/ytm-relay/releases">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/><path d="M7 11l5 5 5-5"/><path d="M12 4v12"/></svg>
+            Unduh YTM Relay
           </a>
-          <span class="ver" data-ver="cyclocomp">Memeriksa rilis terbaru</span>
+          <a class="btn btn-primary" data-repo="cyclocomp" href="https://github.com/AltairKaslana/cyclocomp/releases">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/><path d="M7 11l5 5 5-5"/><path d="M12 4v12"/></svg>
+            Unduh Zylo
+          </a>
+          <span class="ver">YTM Relay <span data-ver="ytm-relay">memeriksa</span> · Zylo <span data-ver="cyclocomp">memeriksa</span></span>
         </div>
-      </article>
+      </div>
     </div>
   </section>
 </main>
 
-<footer class="foot">
-  <div class="wrap foot-in">
-    <span>© 2026 Altair. Dibuat sendiri.</span>
-    <span><a href="https://github.com/AltairKaslana">GitHub</a></span>
+<footer class="site">
+  <div class="wrap foot">
+    <span>Altair, 2026. Dibuat di Jawa Tengah.</span>
+    <span><a href="https://github.com/AltairKaslana">GitHub</a> · <a href="https://github.com/AltairKaslana">Semua rilis</a></span>
   </div>
 </footer>
 
-<script src="main.js"></script>
+<script src="main.js" defer></script>
 </body>
 </html>
