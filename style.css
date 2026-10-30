@@ -1,0 +1,210 @@
+/* ==========================================================================
+   altairk.my.id - design tokens & components
+   Dark theme (locked). One accent: cyan (brand of Zylo / YTM Relay).
+   Fonts: Space Grotesk (display) · Plus Jakarta Sans (body) · JetBrains Mono (data/labels)
+   ========================================================================== */
+
+:root{
+  /* surfaces (cool near-black, never pure #000) */
+  --bg:#0B0F14;
+  --surface:#111823;
+  --surface-2:#16202E;
+  --surface-3:#1B2735;
+  /* lines */
+  --line:rgba(255,255,255,.08);
+  --line-2:rgba(255,255,255,.14);
+  /* text hierarchy */
+  --text:#E8EEF4;
+  --text-2:#A7B4C4;
+  --text-3:#7C8B9E;
+  /* one accent */
+  --accent:#22D3EE;
+  --accent-strong:#5EE7F7;
+  --accent-ink:#04222B;
+  --accent-soft:rgba(34,211,238,.12);
+  --accent-line:rgba(34,211,238,.38);
+  /* radii - one soft family (documented rule: buttons 12, cards 16, tags pill) */
+  --r-sm:8px; --r-md:12px; --r-lg:16px; --r-pill:999px;
+  --maxw:1120px;
+  /* type */
+  --font-d:"Space Grotesk",system-ui,sans-serif;
+  --font-b:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --font-m:"JetBrains Mono",ui-monospace,SFMono-Regular,monospace;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --shadow:0 24px 60px -24px rgba(0,0,0,.7);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--font-b);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+img{max-width:100%;display:block}
+a{color:var(--accent);text-decoration:none}
+a:hover{color:var(--accent-strong)}
+h1,h2,h3{font-family:var(--font-d);letter-spacing:-.02em;line-height:1.1;margin:0}
+p{margin:0}
+::selection{background:var(--accent);color:var(--accent-ink)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.mono{font-family:var(--font-m)}
+.muted{color:var(--text-3)}
+.accent{color:var(--accent)}
+
+/* ---------- Nav ---------- */
+.nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(11,15,20,.72);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.nav-in{display:flex;align-items:center;gap:28px;height:64px}
+.brand{display:inline-flex;align-items:center;gap:11px;font-family:var(--font-d);font-weight:700;font-size:1.05rem;color:var(--text);letter-spacing:-.01em}
+.brand .glyph{
+  width:28px;height:28px;border-radius:9px;flex:none;
+  background:linear-gradient(140deg,var(--accent),#0ea5b7);
+  color:var(--accent-ink);display:grid;place-items:center;
+  font-weight:800;font-size:15px;font-family:var(--font-d);
+}
+.nav-links{margin-left:auto;display:flex;align-items:center;gap:4px}
+.nav-links a{
+  color:var(--text-2);font-size:.9rem;font-weight:500;
+  padding:8px 13px;border-radius:var(--r-sm);
+  transition:color .18s var(--ease),background .18s var(--ease);
+}
+.nav-links a:hover{color:var(--text);background:var(--surface-2)}
+.nav-links a[aria-current="page"]{color:var(--accent)}
+.nav-gh{display:inline-grid;place-items:center;width:38px;height:38px;border-radius:var(--r-sm);border:1px solid var(--line-2);color:var(--text-2);transition:color .18s var(--ease),border-color .18s var(--ease)}
+.nav-gh:hover{color:var(--text);border-color:var(--accent-line)}
+.nav-gh svg{width:19px;height:19px}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  font-family:var(--font-b);font-weight:600;font-size:.95rem;line-height:1;
+  padding:14px 20px;border-radius:var(--r-md);border:1px solid transparent;
+  cursor:pointer;white-space:nowrap;
+  transition:transform .16s var(--ease),filter .16s var(--ease),background .16s var(--ease),border-color .16s var(--ease),color .16s var(--ease);
+}
+.btn svg{width:18px;height:18px;flex:none}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--accent);color:var(--accent-ink)}
+.btn-primary:hover{background:var(--accent-strong);color:var(--accent-ink);filter:none}
+.btn-ghost{background:transparent;color:var(--text);border-color:var(--line-2)}
+.btn-ghost:hover{border-color:var(--accent-line);color:var(--text)}
+.btn-lg{padding:16px 24px;font-size:1rem}
+
+/* ---------- Hero ---------- */
+.hero{padding:88px 0 64px;position:relative;overflow:hidden}
+.hero::before{
+  content:"";position:absolute;inset:-30% 55% 40% -10%;pointer-events:none;
+  background:radial-gradient(closest-side,rgba(34,211,238,.10),transparent 70%);
+}
+.hero-in{position:relative;max-width:760px}
+.hero h1{font-size:clamp(2.4rem,6vw,3.9rem);font-weight:700;letter-spacing:-.03em}
+.hero .lede{margin-top:20px;color:var(--text-2);font-size:clamp(1.02rem,1.6vw,1.2rem);max-width:60ch}
+.hero .lede strong{color:var(--text);font-weight:600}
+.hero-cta{margin-top:32px;display:flex;flex-wrap:wrap;gap:14px}
+
+/* ---------- Section scaffolding ---------- */
+.section{padding:72px 0;border-top:1px solid var(--line)}
+.section-head{max-width:640px;margin-bottom:40px}
+.section-head h2{font-size:clamp(1.5rem,3vw,2.1rem);font-weight:600}
+.section-head p{margin-top:14px;color:var(--text-2);max-width:60ch}
+
+/* ---------- App entry cards (home) ---------- */
+.appcards{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media (max-width:820px){.appcards{grid-template-columns:1fr}}
+.appcard{
+  position:relative;display:flex;flex-direction:column;
+  background:linear-gradient(180deg,var(--surface),var(--bg));
+  border:1px solid var(--line);border-radius:var(--r-lg);
+  padding:30px;overflow:hidden;
+  transition:border-color .2s var(--ease),transform .2s var(--ease);
+}
+.appcard:hover{border-color:var(--accent-line);transform:translateY(-3px)}
+.appcard .mark{width:56px;height:56px;border-radius:15px;display:grid;place-items:center;background:var(--surface-3);border:1px solid var(--line-2);color:var(--accent);margin-bottom:20px}
+.appcard .mark svg{width:30px;height:30px}
+.appcard h3{font-size:1.5rem;font-weight:700}
+.appcard .tag{color:var(--text-2);margin-top:6px;font-size:.98rem}
+.appcard ul{list-style:none;padding:0;margin:22px 0 26px;display:grid;gap:10px}
+.appcard li{position:relative;padding-left:20px;color:var(--text-2);font-size:.93rem}
+.appcard li::before{content:"";position:absolute;left:0;top:.55em;width:7px;height:7px;border-radius:2px;background:var(--accent)}
+.appcard-foot{margin-top:auto;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.link-arrow{display:inline-flex;align-items:center;gap:7px;font-weight:600;color:var(--accent);font-size:.93rem}
+.link-arrow svg{width:17px;height:17px;transition:transform .18s var(--ease)}
+.link-arrow:hover svg{transform:translateX(3px)}
+
+/* ---------- App page hero ---------- */
+.apphero{padding:80px 0 56px}
+@media (max-width:820px){.apphero{grid-template-columns:1fr}}
+.apphero .mark{width:64px;height:64px;border-radius:17px;display:grid;place-items:center;background:var(--surface-3);border:1px solid var(--line-2);color:var(--accent);margin-bottom:22px}
+.apphero .mark svg{width:34px;height:34px}
+.apphero h1{font-size:clamp(2.2rem,5vw,3.3rem);font-weight:700}
+.apphero .tag{margin-top:12px;color:var(--text-2);font-size:clamp(1.05rem,1.8vw,1.25rem);max-width:52ch}
+.apphero .desc{margin-top:18px;color:var(--text-3);max-width:56ch}
+.apphero .hero-cta{margin-top:30px}
+.ver{font-family:var(--font-m);font-size:.8rem;color:var(--text-3);letter-spacing:.01em}
+
+/* ---------- Feature list (2-col, accent rule, no icon grid) ---------- */
+.features{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:28px 40px}
+@media (max-width:640px){.features{grid-template-columns:1fr}}
+.features li{border-left:2px solid var(--accent-line);padding-left:18px}
+.features h3{font-size:1.05rem;font-weight:600;color:var(--text)}
+.features p{margin-top:6px;color:var(--text-3);font-size:.93rem}
+
+/* ---------- Screenshot slots (placeholders until real shots arrive) ---------- */
+.shots{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media (max-width:820px){.shots{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.shots{grid-template-columns:1fr}}
+.shot{
+  aspect-ratio:9/16;border:1px dashed var(--line-2);border-radius:var(--r-lg);
+  background:
+    radial-gradient(120% 90% at 50% 0%,rgba(34,211,238,.05),transparent 60%),
+    var(--surface);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;
+  color:var(--text-3);text-align:center;padding:20px;
+}
+.shot svg{width:30px;height:30px;color:var(--accent);opacity:.8}
+.shot .lbl{font-family:var(--font-m);font-size:.78rem;letter-spacing:.02em}
+.shot.wide{aspect-ratio:16/10;grid-column:span 2}
+@media (max-width:820px){.shot.wide{grid-column:span 2}}
+@media (max-width:520px){.shot.wide{grid-column:span 1}}
+
+/* ---------- Download block ---------- */
+.dl{
+  background:linear-gradient(180deg,var(--surface),var(--bg));
+  border:1px solid var(--line);border-radius:var(--r-lg);
+  padding:44px;display:flex;flex-wrap:wrap;align-items:center;gap:28px;justify-content:space-between;
+}
+.dl .dl-txt{max-width:52ch}
+.dl h2{font-size:clamp(1.5rem,3vw,2rem);font-weight:700}
+.dl p{margin-top:12px;color:var(--text-2)}
+.dl .dl-actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.note{margin-top:18px;color:var(--text-3);font-size:.86rem;max-width:70ch}
+.note code{font-family:var(--font-m);font-size:.82rem;color:var(--text-2);background:var(--surface-2);padding:2px 7px;border-radius:6px}
+
+/* ---------- Footer ---------- */
+.foot{border-top:1px solid var(--line);padding:36px 0;color:var(--text-3);font-size:.88rem}
+.foot-in{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;justify-content:space-between}
+.foot a{color:var(--text-2)}
+.foot a:hover{color:var(--accent)}
+
+/* ---------- Reveal (motivated entry, reduced-motion safe) ---------- */
+[data-reveal]{opacity:0;transform:translateY(16px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+[data-reveal].in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){
+  [data-reveal]{opacity:1;transform:none;transition:none}
+  .btn,.appcard,.nav-links a,.link-arrow svg{transition:none}
+  html{scroll-behavior:auto}
+}
+html{scroll-behavior:smooth}
