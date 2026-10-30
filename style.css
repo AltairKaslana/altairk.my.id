@@ -158,9 +158,10 @@ p{margin:0}
 }
 .shot svg{width:30px;height:30px;color:var(--accent);opacity:.8}
 .shot .lbl{font-family:var(--font-m);font-size:.78rem;letter-spacing:.02em}
-.shot.has-img{padding:0;border-style:solid;border-color:var(--line-2);overflow:hidden;transition:border-color .2s var(--ease)}
+.shot.has-img{padding:0;border-style:solid;border-color:var(--line-2);overflow:hidden;transition:border-color .2s var(--ease);aspect-ratio:auto;justify-content:flex-start}
 .shot.has-img:hover{border-color:var(--accent-line)}
-.shot.has-img img{width:100%;height:100%;object-fit:cover;display:block}
+.shot.has-img img{width:100%;height:auto;aspect-ratio:9/20;object-fit:cover;display:block;flex:none}
+.shot .cap{font-family:var(--font-m);font-size:.7rem;color:var(--text-3);padding:10px 12px;text-align:center;line-height:1.45}
 
 /* Download block */
 .dl{
