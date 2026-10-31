@@ -2,7 +2,7 @@
 
 Etalase statis untuk dua app buatan sendiri:
 
-- **YTM Relay** — relay musik YouTube Music untuk perangkat lama (KitKat, tanpa Play Services). Repo: `AltairKaslana/ytm-relay`
+- **Rylo** — relay musik YouTube Music untuk perangkat lama (KitKat, tanpa Play Services). Repo: `AltairKaslana/rylo`
 - **Zylo** — komputer gowes GPS. Repo: `AltairKaslana/cyclocomp`
 
 Situs ini murni HTML/CSS/JS satu berkas (`index.html`), di-host lewat **GitHub Pages** dengan custom domain `altairk.my.id` (lihat `CNAME`). Tombol unduh mengambil APK **rilis terbaru** otomatis dari GitHub Releases lewat GitHub API.

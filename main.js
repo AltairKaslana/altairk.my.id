@@ -9,7 +9,7 @@
 
   function fmtSize(b) { return (b / 1048576).toFixed(1).replace(".", ",") + " MB"; }
 
-  var repos = ["ytm-relay", "cyclocomp"];
+  var repos = ["rylo", "cyclocomp"];
   var SIX_HOURS = 6 * 60 * 60 * 1000;
 
   repos.forEach(function (repo) {

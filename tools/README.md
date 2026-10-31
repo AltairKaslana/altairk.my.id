@@ -20,5 +20,5 @@ Aturan isi kartu ini:
 
 - Latar `#0D0B08`, aksen kuningan `#E4BE5B`, sama seperti `style.css`.
 - Chip aplikasi memakai outline, bukan bidang penuh, supaya tidak berebut fokus dengan kata beraksen di judul.
-- Identitas app hanya muncul di chip: oranye `#F97316` untuk YTM Relay, cyan `#22D3EE` untuk Zylo.
+- Identitas app hanya muncul di chip: oranye `#F97316` untuk Rylo, cyan `#22D3EE` untuk Zylo.
 - Angka di kolom kanan harus nyata (versi Android, ekspor GPX, tanpa iklan), bukan klaim pemasaran.
