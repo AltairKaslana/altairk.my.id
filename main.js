@@ -1,16 +1,20 @@
 /* altairk.my.id - shared behaviour
    Download buttons pull the LATEST GitHub Release per app, so the version and
-   the APK size on the page are never stale and never hand-typed. The answer is
-   kept in sessionStorage for six hours: a visitor moving between the three
-   pages costs one call per app per session instead of one per page. If the API
-   is unreachable the label falls back to pointing at GitHub, which stays true. */
+   the APK size on the page are never stale and never hand-typed.
+
+   The cached answer is painted immediately, then revalidated in the background
+   after a short window (5 menit). Sebelumnya hasil disimpan 6 jam dan tidak
+   pernah dicek ulang, jadi rilis baru bisa tidak terlihat sampai sesi habis.
+   Simpanan tetap dipakai kalau API sedang gagal atau kena batas kuota. */
 (function () {
   "use strict";
 
   function fmtSize(b) { return (b / 1048576).toFixed(1).replace(".", ",") + " MB"; }
 
   var repos = ["rylo", "cyclocomp"];
-  var SIX_HOURS = 6 * 60 * 60 * 1000;
+  var STORE_MS = 6 * 60 * 60 * 1000;
+  var REFRESH_MS = 5 * 60 * 1000;
+  var KEY = "rel2:";
 
   repos.forEach(function (repo) {
     function paint(j) {
@@ -25,15 +29,16 @@
     }
 
     var hit = null;
-    try { hit = JSON.parse(sessionStorage.getItem("rel:" + repo) || "null"); } catch (e) {}
-    if (hit && hit.j && Date.now() - hit.t < SIX_HOURS) { paint(hit.j); return; }
+    try { hit = JSON.parse(sessionStorage.getItem(KEY + repo) || "null"); } catch (e) {}
+    if (hit && hit.j) paint(hit.j);
+    if (hit && hit.j && Date.now() - hit.t < REFRESH_MS) return;
 
-    fetch("https://api.github.com/repos/AltairKaslana/" + repo + "/releases/latest")
+    fetch("https://api.github.com/repos/AltairKaslana/" + repo + "/releases/latest", {cache: "no-store"})
       .then(function (r) { if (!r.ok) throw 0; return r.json(); })
       .then(function (j) {
-        try { sessionStorage.setItem("rel:" + repo, JSON.stringify({ t: Date.now(), j: j })); } catch (e) {}
+        try { sessionStorage.setItem(KEY + repo, JSON.stringify({t: Date.now(), j: j})); } catch (e) {}
         paint(j);
       })
-      .catch(miss);
+      .catch(function () { if (!hit || !hit.j) miss(); });
   });
 })();
