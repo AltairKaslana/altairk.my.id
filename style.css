@@ -66,6 +66,7 @@ ul{margin:0;padding:0;list-style:none}
 header.site{padding:14px 0;border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
 .brand{display:inline-flex;align-items:center;min-height:44px;padding:0 2px;font-family:var(--font-d);font-weight:700;font-size:1.1rem;letter-spacing:-.02em}
+.brand::after{content:".";color:var(--accent)}
 .nav-links{display:flex;gap:26px;align-items:center;font-size:.9rem;color:var(--text-2)}
 .nav-links a{display:inline-flex;align-items:center;min-height:44px;padding:0 2px;transition:color .18s var(--ease)}
 .nav-links a:hover{color:var(--text)}
@@ -161,6 +162,10 @@ figcaption{font-family:var(--font-m);font-size:.75rem;color:var(--text-3);paddin
 .why h2{font-size:clamp(1.5rem,2.8vw,2rem);max-width:18ch}
 .why p{color:var(--text-2);font-size:1rem;max-width:52ch}
 .why p+p{margin-top:16px}
+
+/* Bagian film di halaman Zylo. Bingkai, tombol, dan keterangan video diatur
+   teaser.css supaya blok yang sama dipakai juga di beranda. */
+.film{padding:72px 0;border-top:1px solid var(--line)}
 
 footer.site{border-top:1px solid var(--line);padding:30px 0 46px}
 .foot{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;font-size:.86rem;color:var(--text-3)}
