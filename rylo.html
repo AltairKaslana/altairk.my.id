@@ -26,6 +26,7 @@
 <link rel="preload" href="assets/fonts/SpaceGrotesk-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/PlusJakartaSans-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="teaser.css">
 </head>
 <body>
 <a class="skip" href="#main">Lompat ke konten</a>
@@ -69,6 +70,27 @@
       <div><span class="k">Iklan</span><span class="v">tidak ada</span></div>
     </div>
   </div>
+
+  <section class="film" style="border-top:0">
+    <div class="wrap">
+      <div class="film-head">
+        <h2>Lihat Rylo bergerak</h2>
+        <span class="mono">Teaser · 23 detik</span>
+      </div>
+      <figure class="teaser" data-teaser>
+        <div class="teaser-frame">
+          <video class="teaser-video" poster="assets/rylo-teaser-poster.jpg" muted loop playsinline preload="none" width="1920" height="1080">
+            <source src="assets/rylo-teaser.mp4" type="video/mp4">
+          </video>
+          <button class="teaser-toggle" type="button" aria-label="Putar video">
+            <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg>
+          </button>
+        </div>
+        <figcaption>Teaser Rylo, 16:9, tanpa suara.</figcaption>
+      </figure>
+    </div>
+  </section>
 
   <div class="band" style="border-top:0;padding-top:34px">
     <div class="wrap shots trio">
@@ -186,5 +208,6 @@
 </footer>
 
 <script src="main.js" defer></script>
+<script src="teaser.js" defer></script>
 </body>
 </html>

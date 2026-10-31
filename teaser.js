@@ -1,4 +1,4 @@
-/* altairk.my.id - pemutar teaser Zylo
+/* altairk.my.id - pemutar teaser (Zylo dan Rylo)
    Video diputar tanpa suara saat terlihat di layar, lalu berhenti saat keluar
    layar supaya tidak ada suara atau decode yang jalan di luar pandangan. Kalau
    pengunjung menekan jeda, video tidak diputar ulang otomatis sampai ia
