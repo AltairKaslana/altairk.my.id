@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; form-action 'none'; frame-ancestors 'none'; script-src 'self' 'sha256-bc2RlLTAxkOJxa81VscTKdeWJQTDB7CCYJnmzx3llQM='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self' https://api.github.com https://musik.altairk.my.id; upgrade-insecure-requests">
+<title>Daftar Rylo - Altair</title>
+<meta name="description" content="Minta kode akses Rylo. Kode sekali pakai untuk membuka aplikasi, tanpa iklan dan tanpa pelacakan.">
+<meta name="theme-color" content="#0D0B08">
+<meta name="color-scheme" content="dark">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Daftar Rylo - Altair">
+<meta property="og:description" content="Minta kode akses Rylo. Kode sekali pakai untuk membuka aplikasi.">
+<meta property="og:url" content="https://altairk.my.id/daftar.html">
+<meta property="og:site_name" content="Altair">
+<meta property="og:locale" content="id_ID">
+<meta property="og:image" content="https://altairk.my.id/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Altair: Rylo dan Zylo, dua aplikasi buatan sendiri">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Daftar Rylo - Altair">
+<meta name="twitter:description" content="Minta kode akses Rylo. Kode sekali pakai untuk membuka aplikasi.">
+<meta name="twitter:image" content="https://altairk.my.id/assets/og.png">
+<link rel="canonical" href="https://altairk.my.id/daftar.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23E4BE5B'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='16' font-weight='700' text-anchor='middle' fill='%232D1B04'%3ER%3C/text%3E%3C/svg%3E">
+<link rel="preload" href="assets/fonts/SpaceGrotesk-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/PlusJakartaSans-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Lompat ke konten</a>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="index.html">Altair</a>
+    <nav class="nav-links" aria-label="Utama">
+      <a href="index.html">Beranda</a>
+      <a href="rylo.html">Rylo</a>
+      <a href="zylo.html">Zylo</a>
+      <a class="nav-gh" href="https://github.com/AltairKaslana" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.55v-2.1c-3.2.7-3.88-1.4-3.88-1.4-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.4-5.25 5.69.41.36.78 1.05.78 2.12v3.14c0 .3.2.66.8.55A11.5 11.5 0 0 0 23.5 12A11.5 11.5 0 0 0 12 .5z"/></svg></a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="signup">
+    <div class="wrap">
+      <span class="mono">Akses Rylo</span>
+      <h1>Minta kode,<br>lalu buka Rylo.</h1>
+      <p class="lede">Rylo memutar YouTube Music di HP lama dan berjalan di server sendiri, jadi tidak terbuka untuk siapa saja. Minta satu kode di sini, lalu tempelkan di aplikasi saat memilih Daftar. Akun dan sandi dibuat di HP, bukan di halaman ini.</p>
+
+      <form class="form" id="signupForm" novalidate>
+        <div class="field">
+          <label for="alias">Nama panggilan <span class="opt">(boleh kosong)</span></label>
+          <input id="alias" name="alias" type="text" maxlength="24" autocomplete="nickname" placeholder="Altair">
+          <p class="hint" id="aliasHint">Dipakai sebagai nama profil di aplikasi.</p>
+        </div>
+        <div class="actions">
+          <button class="btn btn-primary" type="submit" id="askBtn">Minta kode akses</button>
+          <a class="ghost-link" href="rylo.html">Belum punya aplikasinya?</a>
+        </div>
+        <p class="status" id="status" role="status" aria-live="polite"></p>
+      </form>
+
+      <div class="result" id="result" hidden>
+        <span class="mono">Kode akses</span>
+        <div class="code-row">
+          <output class="code" id="code">XXXXXXXXXXXX</output>
+          <button class="btn btn-ghost" type="button" id="copyBtn">Salin</button>
+        </div>
+        <p class="meta" id="codeMeta"></p>
+        <ol class="step-list">
+          <li class="step">
+            <span class="n">01</span>
+            <div>
+              <h3>Unduh Rylo</h3>
+              <p>Ambil APK terbaru dari halaman Rylo, lalu pasang di HP. Untuk Android lama, izinkan pemasangan dari sumber tidak dikenal.</p>
+            </div>
+          </li>
+          <li class="step">
+            <span class="n">02</span>
+            <div>
+              <h3>Buka aplikasi, pilih Daftar</h3>
+              <p>Isi username, sandi, dan nama panggilan. Di kolom kode undangan, tempel kode di atas. Alamat server sudah tertanam, tidak perlu diketik.</p>
+            </div>
+          </li>
+          <li class="step">
+            <span class="n">03</span>
+            <div>
+              <h3>Langsung masuk</h3>
+              <p>Setelah daftar, aplikasi langsung memakai akun itu. Kode ini sekali pakai, jadi jangan dibagikan ke orang lain.</p>
+            </div>
+          </li>
+        </ol>
+        <p class="note">Kode berlaku satu hari sejak diminta. Satu jaringan boleh meminta paling banyak tiga kode per jam. Kalau kode hilang, minta lagi besok atau hubungi Altair.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="rylo.html">Ke halaman Rylo</a>
+          <button class="btn btn-ghost" type="button" id="againBtn">Minta kode lain</button>
+        </div>
+      </div>
+
+      <p class="note foot-note">Halaman ini hanya mengirim permintaan kode ke server Rylo. Tidak ada email, nomor HP, atau pelacak yang dipasang di sini.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap foot">
+    <span>Altair, 2026</span>
+    <span>altairk.my.id</span>
+  </div>
+</footer>
+
+<script src="daftar.js" defer></script>
+</body>
+</html>

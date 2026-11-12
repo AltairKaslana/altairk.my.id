@@ -227,3 +227,34 @@ footer.site{border-top:1px solid var(--line);padding:30px 0 46px}
   *{animation:none!important;transition:none!important}
   html{scroll-behavior:auto}
 }
+
+/* ---------- halaman daftar (kode akses Rylo) ----------
+   Satu kolom, fokus ke satu tindakan: minta kode. Kode ditampilkan dengan mono
+   besar karena harus dibaca ulang dari layar HP dan diketik di aplikasi. */
+.signup{padding:92px 0 110px}
+.signup h1{font-size:clamp(2.1rem,5.2vw,3.7rem);max-width:20ch}
+.signup .lede{margin-top:22px;max-width:62ch;color:var(--text-2)}
+.form{margin-top:38px;max-width:560px}
+.field label{display:block;font-family:var(--font-m);font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--text-3);margin-bottom:9px}
+.field .opt{text-transform:none;letter-spacing:0;color:var(--text-3)}
+.field input{width:100%;min-height:44px;background:var(--panel-2);border:1px solid var(--line-2);border-radius:var(--r-btn);color:var(--text);font:inherit;padding:13px 15px}
+.field input::placeholder{color:var(--text-3)}
+.field input:focus-visible{border-color:var(--accent)}
+.hint{margin-top:8px;color:var(--text-3);font-size:.86rem}
+.status{min-height:1.5em;margin-top:18px;font-size:.92rem;color:var(--text-2)}
+.status.is-ok{color:var(--accent)}
+.status.is-warn{color:#E8A05C}
+.result{margin-top:40px;padding:30px;border:1px solid var(--line);border-radius:var(--r-panel);background:var(--panel)}
+.code-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:10px}
+.code{font-family:var(--font-m);font-size:clamp(1.4rem,5.6vw,2.1rem);letter-spacing:.16em;color:var(--accent);background:var(--accent-soft);border:1px solid rgba(228,190,91,.35);border-radius:var(--r-btn);padding:12px 18px;user-select:all;line-height:1.2}
+.meta{margin-top:14px;color:var(--text-3);font-size:.88rem}
+.note{margin-top:26px;color:var(--text-3);font-size:.9rem;max-width:62ch}
+.foot-note{margin-top:38px}
+.result .step-list{margin-top:30px}
+.result .actions{margin-top:30px}
+@media (max-width:560px){
+  .signup{padding:56px 0 78px}
+  .result{padding:20px}
+  .code{font-size:1.3rem;letter-spacing:.1em;padding:10px 14px}
+  .code-row{gap:10px}
+}
