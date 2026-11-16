@@ -10,7 +10,20 @@ pgrep -af "http.server"            # pastikan portnya bebas
 python3 -m http.server 8901 &      # kalau belum jalan
 ```
 
-Lalu lewat browser otomatis: buka `http://127.0.0.1:8901/tools/og-card.html`, set viewport 1200x630 dengan `deviceScaleFactor 1`, tangkap layar, dan simpan hasilnya menimpa `assets/og.png`. Ukuran wajib 1200x630 (dipakai `og:image:width` / `og:image:height` di keempat halaman).
+Lalu render dengan Chrome headless (tanpa Playwright, cukup Chrome yang terpasang):
+
+```
+cd site
+python3 -m http.server 8899 &
+"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
+  --headless=new --disable-gpu --hide-scrollbars \
+  --force-device-scale-factor=1 --window-size=1200,630 \
+  --virtual-time-budget=4000 \
+  --screenshot=assets/og.png \
+  "http://127.0.0.1:8899/tools/og-card.html"
+```
+
+Hasilnya harus persis 1200x630 (dipakai `og:image:width` / `og:image:height` di keempat halaman).
 
 Sesudah menimpa, periksa:
 - `identify` atau PIL: hasil harus persis 1200x630.
@@ -18,7 +31,7 @@ Sesudah menimpa, periksa:
 
 Aturan isi kartu ini:
 
-- Latar `#0D0B08`, aksen kuningan `#E4BE5B`, sama seperti `style.css`.
-- Chip aplikasi memakai outline, bukan bidang penuh, supaya tidak berebut fokus dengan kata beraksen di judul.
-- Identitas app hanya muncul di chip: amber `#F2A33A` untuk Rylo, cyan `#22D3EE` untuk Zylo.
-- Angka di kolom kanan harus nyata (versi Android, ekspor GPX, tanpa iklan), bukan klaim pemasaran.
+- Latar `#fbfbfd`, tinta `#1d1d1f`, aksen tautan `#0066cc`, sama seperti `style.css`.
+- Chip aplikasi memakai latar putih dengan garis rambut, bukan bidang penuh, supaya tidak berebut fokus dengan judul.
+- Identitas app hanya muncul di chip: `R` dengan latar `#fbe9dc`, `Z` dengan latar `#dff3f7`.
+- Angka di kolom kanan harus nyata (versi Android, 10 metrik, ekspor GPX), bukan klaim pemasaran.
