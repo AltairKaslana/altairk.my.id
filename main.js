@@ -18,7 +18,14 @@
 
   repos.forEach(function (repo) {
     function paint(j) {
-      var apk = (j.assets || []).filter(function (a) { return /\.apk$/i.test(a.name); })[0];
+      // Pilih APK yang namanya memuat tag rilis ini. Sebelumnya diambil .apk
+      // pertama, jadi saat satu rilis membawa beberapa APK (v6.2/v6.3/v6.4.1)
+      // tombol bisa menunjuk berkas usang yang sudah dihapus -> 404.
+      var all = (j.assets || []).filter(function (a) { return /\.apk$/i.test(a.name); });
+      var want = String(j.tag_name || "").toLowerCase();
+      var apk = all.filter(function (a) {
+        return want && a.name.toLowerCase().indexOf(want.replace(/^v/, "")) >= 0;
+      })[0] || all[0];
       var url = apk ? apk.browser_download_url : j.html_url;
       document.querySelectorAll('a[data-repo="' + repo + '"]').forEach(function (a) { a.href = url; });
       var label = [j.tag_name, apk ? fmtSize(apk.size) : ""].filter(Boolean).join(" · ");
@@ -30,6 +37,13 @@
 
     var hit = null;
     try { hit = JSON.parse(sessionStorage.getItem(KEY + repo) || "null"); } catch (e) {}
+    // Simpanan yang lebih tua dari STORE_MS dibuang: URL unduhan di dalamnya
+    // bisa sudah mati (aset dihapus / rilis diganti), dan memakainya lagi
+    // menghasilkan 404 walau API sedang sehat.
+    if (hit && (!hit.j || !hit.t || Date.now() - hit.t > STORE_MS)) {
+      hit = null;
+      try { sessionStorage.removeItem(KEY + repo); } catch (e) {}
+    }
     if (hit && hit.j) paint(hit.j);
     if (hit && hit.j && Date.now() - hit.t < REFRESH_MS) return;
 
